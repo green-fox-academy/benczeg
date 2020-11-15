@@ -1,0 +1,40 @@
+html,body {
+	background-image: url("assets/background.png");
+	background-size: cover;
+	margin: 0 80px;
+	font-family: serif;
+	font-size: 24px;
+}
+#top {
+	background-color: grey;
+	background-position: 100%;
+	padding: 10px 0px;	
+}
+.links{
+	color: deeppink;
+	float: right;
+	padding: 0 10px;
+}
+#name {
+	font-size: 35px;
+}
+#wannabe {
+	font-size: 30px;
+	font-weight: bold;
+	color: deeppink;
+}
+.line {
+	border-top: dashed 1px;
+	width:10%;
+	margin: 20px auto;
+	text-align: center;
+}
+#definitions-title p{
+	font-size: 30px;
+	font-weight: bold;
+	width: 300px;
+	margin: auto;
+}
+
+
+

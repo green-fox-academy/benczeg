@@ -1,0 +1,51 @@
+*{
+    margin:0;
+    padding:0;
+}
+header {
+    background: url("anakin.png") center no-repeat;
+    background-size: cover;
+    margin: 0 150px;
+  }
+#hi{
+    font-size: 30px;
+    padding: 250px 0 0 300px;
+    font-weight: bold;
+    font-family: serif;
+}
+#anakin{
+    font-size: 70px;
+    padding: 0 0 50px 300px;
+    font-weight: bold;
+    font-family: serif;
+}
+.cv p{
+    margin: 40px 0 40px 450px;
+}
+ul li{
+    margin-left: 470px;
+}
+p span{
+    font-weight: bold;
+}
+main{
+    word-spacing: 10px;
+    line-height: 1.6;
+    font-family: sans-serif,cursive;
+}
+.quote{
+    display: block;
+    color: white;
+    background-color: #404040;   
+    margin: 80px 270px;
+    padding: 50px 0px;
+}
+.quote p{
+    text-align: left;
+    font-size: 100px;
+}
+.quote q{
+    font-size: 50px;
+    text-align: center;
+
+}

@@ -1,8 +1,7 @@
 import java.util.Arrays;
 
-//nem tudom hogyan vágjam le a nullákat az eredmény végén. már null-ok lettet -.-
+//SOLVED: nem tudom hogyan vágjam le a nullákat az eredmény végén. már null-ok lettet -.-
 public class SubInt {
-
     public static String[] subInt(int q, int[] block) {
         String[] solution = new String[block.length];
         int k = 0;
@@ -19,12 +18,10 @@ public class SubInt {
         return cleared;
     }
 
-
     public static void main(String[] args) {
         int[] nums = {1, 11, 34, 52, 61};
         System.out.println(Arrays.toString(subInt(1, nums)));
         System.out.println(Arrays.toString(subInt(9, nums)));
-
     }
 }
 

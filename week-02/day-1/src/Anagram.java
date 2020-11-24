@@ -15,10 +15,10 @@ public class Anagram {
                     }
                 }
             }
-            boolean anagramFinal=true;
+            boolean anagramFinal = true;
             for (int i = 0; i < letters1.length(); i++) {
-                if (booleans[i] == 0){
-                    anagramFinal=false;
+                if (booleans[i] == 0) {
+                    anagramFinal = false;
                 }
             }
             return anagramFinal;

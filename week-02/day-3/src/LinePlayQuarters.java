@@ -5,23 +5,32 @@ import java.awt.*;
 import static java.lang.Math.*;
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
-public class StarryNight {
+public class LinePlayQuarters {
     public static void mainDraw(Graphics graphics) {
-        // Draw the night sky:
-        //  - The background should be black
-        //  - The stars can be small squares
-        //  - The stars should have random positions on the canvas
-        //  - The stars should have random color (some shade of grey)
-        int stars = 2;
-        int color;
-        int x;
-        int y;
-        for (int i = 0; i < 100; i++) {
-            color = (int) (Math.random() * 256);
-            x = (int) (Math.random() * WIDTH);
-            y = (int) (Math.random() * HEIGHT);
-            graphics.setColor(new Color(color, color, color));
-            graphics.drawRect(x, y, stars, stars);
+
+        int Start = 0;
+        int End = HEIGHT / 8; // =WIDTH
+        int xStand = 0;
+        int yStand = (HEIGHT / 8); // = WIDTH-5
+        //int csere;
+        for (int i = 0; i < 8; i++) {
+           // Start += i * HEIGHT / 8;
+            //End += i * HEIGHT / 8;
+            //csere = Start;
+            //Start = End;
+            //End = csere;
+            Start = 0;
+            End = HEIGHT/8;
+            xStand += i * HEIGHT / 8 ;
+            yStand += i * HEIGHT / 8;
+            while (Start < (HEIGHT / 8 )) {
+                Start += 5;
+                End -= 5;
+                graphics.setColor(Color.green);
+                graphics.drawLine(xStand, Start, Start, yStand);
+                graphics.setColor(Color.MAGENTA);
+                graphics.drawLine(yStand, End, End, xStand);
+            }
         }
     }
 
@@ -44,7 +53,6 @@ public class StarryNight {
         @Override
         protected void paintComponent(Graphics graphics) {
             super.paintComponent(graphics);
-            setBackground(Color.black);
             mainDraw(graphics);
         }
     }

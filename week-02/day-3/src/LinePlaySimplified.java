@@ -5,31 +5,31 @@ import java.awt.*;
 import static java.lang.Math.*;
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
-public class LinePlayQuarters {
+public class LinePlaySimplified {
     public static void mainDraw(Graphics graphics) {
 
-        int Start = 0;
-        int End = HEIGHT / 8; // =WIDTH
-        int xStand = 0;
-        int yStand = (HEIGHT / 8); // = WIDTH-5
-        //int csere;
-        for (int i = 0; i < 8; i++) {
-           // Start += i * HEIGHT / 8;
-            //End += i * HEIGHT / 8;
-            //csere = Start;
-            //Start = End;
-            //End = csere;
-            Start = 0;
-            End = HEIGHT/8;
-            xStand += i * HEIGHT / 8 ;
-            yStand += i * HEIGHT / 8;
-            while (Start < (HEIGHT / 8 )) {
-                Start += 5;
-                End -= 5;
-                graphics.setColor(Color.green);
-                graphics.drawLine(xStand, Start, Start, yStand);
-                graphics.setColor(Color.MAGENTA);
-                graphics.drawLine(yStand, End, End, xStand);
+        int start; // +
+        int end;   // -
+        int stop;  // 0
+        int step = HEIGHT / 8;
+        int sraff = 5;
+
+        for (int j = 0; j < 8; j++) {
+            for (int i = 0; i < 8; i++) {
+
+
+                start = i *  step;
+                end = start + step;
+                stop = i *  step;
+
+                while (start < ((i + 1) * step)) {
+                    start += sraff;
+                    end -= sraff;
+                    graphics.setColor(Color.green);
+                    graphics.drawLine(stop, start, end, stop);
+                    graphics.setColor(Color.MAGENTA);
+                    graphics.drawLine(start, stop + step, stop + step, end);
+                }
             }
         }
     }

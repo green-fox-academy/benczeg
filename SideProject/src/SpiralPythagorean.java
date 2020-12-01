@@ -62,7 +62,7 @@ public class SpiralPythagorean {
                 yPointCoordinates.add((int) Cy);
             }*/
 
-        }
+        //}
         for (int i = 0; i < xPointCoordinates.size(); i++) {
 
             System.out.println(xPointCoordinates.get(i) + " " + yPointCoordinates.get(i));

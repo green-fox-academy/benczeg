@@ -1,0 +1,22 @@
+The Zen of Python
+by Tim Peters
+
+Beautiful is better than ugly.
+Explicit is better than implicit.
+Simple is better than complex.
+Complex is better than complicated.
+Flat is better than nested.
+Sparse is better than dense.
+Readability counts.
+Special cases aren't special enough to break the rules.
+Special cases aren't special enough to break the rules.
+Readability counts.
+Sparse is better than dense.
+Flat is better than nested.
+Complex is better than complicated.
+Simple is better than complex.
+Explicit is better than implicit.
+Beautiful is better than ugly.
+
+by Tim Peters
+The Zen of Python

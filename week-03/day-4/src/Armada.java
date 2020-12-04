@@ -29,10 +29,10 @@ public class Armada {
         while (j != otherArmada.armada.size() && i != armada.size()) {
 
             if (this.armada.get(i).battle(otherArmada.armada.get(j))) {
-                System.out.println("First Armada's " + i + ". ship won the battle.");
+                System.out.println("First Armada's " + (i + 1) + ". ship won the battle.");
                 j++;
             } else {
-                System.out.println("Second Armada's " + j + ". ship won the battle.");
+                System.out.println("Second Armada's " + (j + 1) + ". ship won the battle.");
                 i++;
             }
         }

@@ -21,11 +21,9 @@ public class Ship {
     }
 
     public void shipStatus() {
-        System.out.println("Captain: " + captain.status);
-        System.out.println("Captain's drunkness: " + captain.drunkness);
         int aliveCrewMembers = 0;
-        for (int i = 0; i < this.crew.size(); i++) {
-            if (this.crew.get(i).status.equals(statusToCheck)) {
+        for (Pirate pirate : this.crew) {
+            if (pirate.status.equals(statusToCheck)) {
                 aliveCrewMembers++;
             }
         }
@@ -33,14 +31,16 @@ public class Ship {
         if (alives == 0) {
             captain.status = captain.statusChangerDie;
         }
+        System.out.println("Captain: " + captain.status);
+        System.out.println("Captain's drunkness: " + captain.drunkness);
         System.out.println("Ship's crew: " + aliveCrewMembers);
     }
 
     public boolean battle(Ship otherShip) {
         System.out.println("");
-        System.out.println("Before battle ship attacker: ");
+        System.out.println("\nBefore battle ship Attacker: ");
         shipStatus();
-        System.out.println("Before battle ship attacked: ");
+        System.out.println("Before battle ship Defender: ");
         otherShip.shipStatus();
         boolean thisShipWins = false;
         int rounds;
@@ -53,22 +53,22 @@ public class Ship {
         if (scoreThisShip > scoreOtherShip) {
             thisShipWins = true;
         }
-        System.out.println("After battle ship attacker: ");
+        System.out.println("After battle ship Attacker: ");
         shipStatus();
-        System.out.println("After battle ship attacked: ");
+        System.out.println("After battle ship Defender: ");
         otherShip.shipStatus();
         if (thisShipWins) {
-            System.out.println("First ship wins.");
+            System.out.println("Attacker ship wins. Celebration: \n");
             this.celebrate();
             otherShip.losses();
         } else {
-            System.out.println("Second ship wins.");
+            System.out.println("Defender ship wins. Celebration: \n");
             this.losses();
             otherShip.celebrate();
         }
-        System.out.println("After celebration ship attacker: ");
+        System.out.println("\nAfter celebration ship Attacker: ");
         shipStatus();
-        System.out.println("After celebration ship attacked: ");
+        System.out.println("After celebration ship Defender: ");
         otherShip.shipStatus();
 
         return thisShipWins;

@@ -33,22 +33,44 @@ public class ToDo {
     }
   }
 
-
   public void adds(String string) {
     List<String> tasksList = getTasksList();
-    tasksList.add(string);
+    tasksList.add("[ ]" + string);
     makeTasksList(tasksList);
   }
 
   public void removes(String taskNumber) {
-    int taskNumberToRemove = Integer.parseInt(taskNumber) - 1;
+    int taskNumberToRemove = 9999;
+    try {
+      taskNumberToRemove = Integer.parseInt(taskNumber) - 1;
+    } catch (Exception e) {
+      System.out.println("Unable to remove: index is not a number");
+    }
     List<String> tasksList = getTasksList();
-    tasksList.remove(taskNumberToRemove);
-    makeTasksList(tasksList);
+    if (taskNumberToRemove < tasksList.size()) {
+      tasksList.remove(taskNumberToRemove);
+      makeTasksList(tasksList);
+    } else {
+      System.out.println("Unable to remove: index is out of bound");
+    }
   }
 
-  public void completes() {
-
+  public void completes(String taskNumber) {
+    int taskNumberToRemove = 9999;
+    try {
+      taskNumberToRemove = Integer.parseInt(taskNumber) - 1;
+    } catch (Exception e) {
+      System.out.println("Unable to remove: index is not a number");
+    }
+    List<String> tasksList = getTasksList();
+    if (taskNumberToRemove < tasksList.size()) {
+      String[] redo = new String[2];
+      redo = tasksList.get(taskNumberToRemove).split("[ ]");
+      tasksList.add(taskNumberToRemove,redo[0]);
+      makeTasksList(tasksList);
+    } else {
+      System.out.println("Unable to remove: index is out of bound");
+    }
   }
 
   private List<String> getTasksList() {

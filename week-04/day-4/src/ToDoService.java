@@ -12,19 +12,30 @@ public class ToDoService {
           break;
         }
         case "-a": {
-          todo.adds(arguments[1]);
+          try {
+            todo.adds(arguments[1]);
+          } catch (Exception e) {
+            //log it
+            System.out.println("Unable to add: no task provided");
+          }
           break;
         }
         case "-c": {
-          todo.completes();
+          todo.completes(arguments[1]);
           break;
         }
         case "-r": {
-          todo.removes(arguments[1]);
+          try {
+            todo.removes(arguments[1]);
+          } catch (Exception e) {
+            System.out.println("Unable to remove: no index provided");
+            //log it
+          }
           break;
         }
         default: {
-          System.out.println("invalid arguments");
+          System.out.println("Unsupported argument");
+          todo.emptyArgument();
           break;
         }
       }

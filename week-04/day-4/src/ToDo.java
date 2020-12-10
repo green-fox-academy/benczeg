@@ -29,13 +29,14 @@ public class ToDo {
     } else {
       for (String line : tasksList) {
         System.out.println(listItemNumber + " - " + line);
+        listItemNumber++;
       }
     }
   }
 
   public void adds(String string) {
     List<String> tasksList = getTasksList();
-    tasksList.add("[ ]" + string);
+    tasksList.add("[ ] " + string);
     makeTasksList(tasksList);
   }
 

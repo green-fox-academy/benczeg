@@ -1,0 +1,17 @@
+html{
+    background-color: cornflowerblue;
+    margin : 25px
+}
+table, td, tr{
+    border:1px solid red;
+    font-size: 30px;
+    padding: 5px;
+}
+table{
+    margin : 20px;
+    background-color: darkseagreen;
+}
+
+form{
+    margin: 10px;
+}

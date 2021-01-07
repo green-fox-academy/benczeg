@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<link rel="stylesheet" href="style.css">
+<head>
+    <meta charset="UTF-8">
+    <title>Best Bank</title>
+</head>
+<body>
+<table>
+    <tr th:each="bankAccount: ${accountList}" th:style="${bankAccount.getKing} ? 'font-weight: bold'">
+        <td th:text="${bankAccountStat.index}"/>
+        <td th:text="${bankAccount.name}"/>
+        <td th:text="${#numbers.formatDecimal(bankAccount.balance, 0, 'COMMA', 2, 'POINT')}"/>
+        <td th:text="${bankAccount.animalType}"/>
+        <td th:text="${bankAccount.getBad} ? 'Bad Guy' : 'Good Guy'"/>
+    </tr>
+</table>
+<div>
+    <form action="/save" method="post">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name">
+
+        <label for="balance">Balance:</label>
+        <input type="number" id="balance" name="balance">
+        <label for="animalType">Animal type:</label>
+        <input type="text" id="animalType" name="animalType">
+        <input type="radio" id="isKing" name="isKing" value="true">
+        <label for="isKing">King?</label>
+        <input type="radio" id="isBad" name="isBad" value="true">
+        <label for="isBad">Bad guy?</label>
+        <button type="submit">Add account</button>
+    </form>
+</div>
+<div>
+    <form action="/add-money" method="get">
+        <button type="submit">Raise them all $</button>
+    </form>
+</div>
+</body>
+</html>

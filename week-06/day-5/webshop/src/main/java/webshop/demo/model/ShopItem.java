@@ -1,10 +1,10 @@
 package webshop.demo.model;
 
-public class shopItem {
+public class ShopItem {
 
   String name;
   String description;
-  Integer priceInCrown;
+  Integer price;
   Integer quantityOfStock;
 
   public String getName() {
@@ -23,12 +23,12 @@ public class shopItem {
     this.description = description;
   }
 
-  public Integer getPriceInCrown() {
-    return priceInCrown;
+  public Integer getPrice() {
+    return price;
   }
 
-  public void setPriceInCrown(Integer priceInCrown) {
-    this.priceInCrown = priceInCrown;
+  public void setPrice(Integer price) {
+    this.price = price;
   }
 
   public Integer getQuantityOfStock() {
@@ -39,11 +39,11 @@ public class shopItem {
     this.quantityOfStock = quantityOfStock;
   }
 
-  public shopItem(String name, String description, Integer priceInCrown,
+  public ShopItem(String name, String description, Integer priceInCrown,
                   Integer quantityOfStock) {
     this.name = name;
     this.description = description;
-    this.priceInCrown = priceInCrown;
+    this.price = priceInCrown;
     this.quantityOfStock = quantityOfStock;
   }
 }

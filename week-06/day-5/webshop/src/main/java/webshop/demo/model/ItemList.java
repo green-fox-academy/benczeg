@@ -12,10 +12,10 @@ import java.util.stream.Stream;
 public class ItemList {
   List<ShopItem> itemList = new ArrayList<>();
 
-  public ItemList() {
+  public ItemList(String path) {
     {
       try {
-        Stream<String> lines = Files.lines(Path.of("src/main/resources/static/shopItems.csv"));
+        Stream<String> lines = Files.lines(Path.of(path));
         List<ShopItem> items = lines.skip(1).map(line -> {
           String[] arr = line.split(";");
           return new ShopItem(
@@ -26,7 +26,7 @@ public class ItemList {
         this.itemList.addAll(items);
       } catch (IOException e) {
         e.printStackTrace();
-        System.out.println("Couldnt read ot something went wrong");
+        System.out.println("Couldnt read or something went wrong");
       }
     }
   }

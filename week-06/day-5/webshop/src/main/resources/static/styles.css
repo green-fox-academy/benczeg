@@ -1,0 +1,72 @@
+body {
+    background-color: #fff;
+}
+
+header {
+    color: lightskyblue;
+    font-family: "Arial";
+}
+
+header:after
+{
+    content:' ';
+    display:block;
+    border:2px solid lightskyblue;
+}
+
+thead {
+    background-color: #222;
+    color: whitesmoke;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 10cm;
+    border-color: lightslategray;
+    text-align: left;
+    width: 100%;
+    font-family: "Arial";
+}
+
+table td {
+    padding: 15px 30px;
+    background: whitesmoke;
+}
+
+table th {
+    background: lightskyblue;
+    padding: 15px;
+    color: black;
+}
+
+table tr:nth-child(odd) td {
+    background: white;
+}
+
+table,
+td {
+    border: 1px solid silver;
+}
+
+table thead tr th {
+    border-bottom: 5px solid slategrey;
+}
+
+nav {
+    padding-left: 15px;
+}
+
+nav button {
+    padding: 6px 12px 3px 12px;
+    width: 30%;
+    font-family: Helvetica, Arial, sans-serif;
+    border: 3px solid tomato;
+    border-radius: 5px;
+    margin: 3px 6px;
+    background-color: orangered;
+    color: white;
+}
+
+span{
+    font-size: 30px;
+}

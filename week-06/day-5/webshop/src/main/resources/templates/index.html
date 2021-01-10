@@ -2,17 +2,46 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>BG's</title>
+    <link rel="stylesheet" href="/styles.css"/>
 </head>
+<body>
+<header><h1>My shop</h1></header>
+<br>
+<!-- táblázat -->
+<nav>
+    <button onclick="location.href='/'">ALL</button>
+    <button onclick="location.href='/only-available'">ONLY AVAILABLE</button>
+    <button onclick="location.href='/cheapest-first'">CHEAPEST FIRST</button>
+    <button onclick="location.href='/contains-nike'">CONTAINS NIKE</button>
+    <button onclick="location.href='/average-stock'">AVERAGE STOCK</button>
+    <button onclick="location.href='/most-expensive-available'">MOST EXPENSIVE AVAILABLE</button>
+</nav>
 <table th:if="list!=null">
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Price</th>
+        <th>Quantity of stock</th>
+    </tr>
+    </thead>
+    <tbody>
     <tr th:each="ShopItem: ${list}">
         <td th:text="${ShopItem.getName()}"/>
         <td th:text="${ShopItem.getDescription()}"/>
         <td th:text="${#numbers.formatDecimal(ShopItem.getPrice(), 0, 'COMMA', 2, 'POINT')}"/>
         <td th:text="${ShopItem.getQuantityOfStock()}"/>
     </tr>
+    </tbody>
 </table>
 <span th:text=" ${average!=null} ? 'Average stock: '+${average}"/>
 <span th:text=" ${name1!=null} ? 'Most expensive item: '+${name1}"/>
+<div th:fragment="searchBar">
+    <form method="post" action="/search">
+        <input type="text" id="searchword" name="searchword" placeholder="...something like nike">
+        <button id="searchButton" type="submit">Search</button>
+    </form>
+</div>
 </body>
 </html>

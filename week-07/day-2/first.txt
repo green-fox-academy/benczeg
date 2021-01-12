@@ -1,0 +1,7 @@
+6.:
+
+Select name,title From movie inner join rating on movie.mID = rating.mID inner join reviewer on rating.rID = reviewer.rID having COUNT(name) >1;
+
+9.:
+
+SELECT AVG(bef1980.avg) - AVG(aft1980.avg) FROM ( SELECT AVG(stars) AS avg FROM movie Inner join rating on movie.mID = rating.mID WHERE year < 1980 Group by movie.mID) as bef1980, ( SELECT AVG(stars) AS avg FROM movie Inner join rating on movie.mID = rating.mID WHERE year > 1980 Group by movie.mID) as aft1980;

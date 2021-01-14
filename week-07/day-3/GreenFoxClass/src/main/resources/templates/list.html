@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>index</title>
+</head>
+<body>
+<table>
+    <tr th:if="${list.empty}">
+        <td colspan="2"> No student Available </td>
+    </tr>
+    <tr th:each="student : ${list}">
+        <td><span th:text="${student}"> Title </span></td>
+    </tr>
+</table>
+</body>
+</html>

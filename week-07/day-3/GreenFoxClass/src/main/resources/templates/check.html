@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Check</title>
+</head>
+<body>
+<form action="/gfa/check" method="post">
+    <label for="name">name:</label><br>
+    <input type="text" id="name" name="name" placeholder="John"><br>
+    <input type="submit" value="Submit">
+</form>
+<span th:if="${result} != null", th:text="${result}"></span><br>
+<a href="/gfa">Main page</a>
+</body>
+</html>

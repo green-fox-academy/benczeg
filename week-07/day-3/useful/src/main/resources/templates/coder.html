@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Ceaser</title>
+</head>
+<body>
+<form th:if="${link == 'encoder'} " action="/useful/result?type=encoder" method="post">
+    <label for="text">Text:</label><br>
+    <input type="text" id="text" name="text"><br>
+    <label for="number">Number:</label><br>
+    <input type="number" id="number" name="number">
+    <input type="submit" value="Submit">
+</form>
+<form th:if="${link == 'decoder'} " action="/useful/result?type=decoder" method="post">
+    <label for="text">Text:</label><br>
+    <input type="text" id="text" name="text"><br>
+    <label for="number">Number:</label><br>
+    <input type="number" id="number" name="number">
+    <input type="submit" value="Submit">
+</form>
+</body>
+</html>

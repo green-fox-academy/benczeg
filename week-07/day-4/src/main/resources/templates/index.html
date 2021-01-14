@@ -7,12 +7,13 @@
 <body>
 <ul>
     <li>Information</li>
-    <li>Tea</li>
-    <li>Milk</li>
+    <li><a href="/nutrition">Nutrition</a></li>
+    <li><a href="#">Link 2</a></li>
 </ul>
 <img src="greenfox.png">
-<p> This is <span th:text="${name}"></span> Currently living on <span th:text="${food}"></span> and <span th:text="${drink}">.</span> He knows <span th:text="${tricksnum}"></span> tricks.</p>
-<ul th:each="trick: ${tricks}">
+<p> This is <span th:text="${pet.name}"></span> Currently living on <span th:text="${pet.food}"></span> and <span
+        th:text="${pet.drink}">.</span> He knows <span th:text="${tricksnum}"></span> tricks.</p>
+<ul th:each="trick: ${pet.tricks}">
     <li th:text="${trick}"></li>
 </ul>
 </body>

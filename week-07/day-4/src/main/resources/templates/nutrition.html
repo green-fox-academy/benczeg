@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Nutrition</title>
+</head>
+<body>
+<form method="post" action="/nutrition">
+    <label for="food">Food</label>
+    <select name="food">
+        <option id="food" th:each="i : ${foods}" th:value="${i}" th:text="${i}">
+        </option>
+    </select>
+    <label for="drink">Drink</label>
+    <select name="drink">
+        <option id="drink" th:each="i : ${drinks}" th:value="${i}" th:text="${i}">
+        </option>
+    </select>
+    <input type="submit" value="Change">
+</form>
+</body>
+</html>

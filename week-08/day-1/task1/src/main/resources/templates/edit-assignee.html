@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit th:text=""</title>
+</head>
+<body>
+<form action="/assignees" method="post">
+    <input type="text" th:value="${assignee.email}" name="email"><br>
+    <input type="text" th:value="${assignee.name}" name="name">
+    <input type="hidden" th:value="${assignee.id}" name="id">
+    <input type="submit" value="Edit">
+</form>
+</body>
+</html>

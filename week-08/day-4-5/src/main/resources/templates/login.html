@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Blue It Log In</title>
+    <link href="/webjars/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"/>
+</head>
+<body>
+<form class="form-inline container justify-content-center bg-secondary p-4" method="post" action="/login">
+    <label class="sr-only" for="user">Username: </label>
+    <input class="form-control mb-2 mr-sm-2" id="user" type="text" name="userName" placeholder="Your Name">
+    <label class="sr-only" for="p">Password: </label>
+    <div class="input-group mb-2 mr-sm-2">
+        <div class="input-group-prepend">
+            <div class="input-group-text">@</div>
+        </div>
+        <input id="p" type="password" name="password" placeholder="Password">
+    </div>
+    <button class="btn btn-primary mb-2" type="submit">Log in</button>
+</form>
+<div class=" d-flex justify-content-center m-2">
+    <a class="btn btn-primary" href="/registration">Don't have a Blue It user yet?</a>
+</div>
+<script src="/webjars/jquery/3.3.1/jquery.min.js"></script>
+<script src="/webjars/bootstrap/4.3.1/js/bootstrap.bundle.js"></script>
+</body>
+</html>

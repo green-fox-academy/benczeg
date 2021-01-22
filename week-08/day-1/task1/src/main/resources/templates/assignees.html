@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>basssssszaMeg</title>
+</head>
+<body>
+<tr th:each="assignee : ${assignees}"><br>
+    <td th:text="${assignee.id}"></td>
+    <td th:text="${assignee.name}"></td>
+    <td th:text="${assignee.email}"></td>
+    <td><a th:href="${assignee.id}+'/edit-assignee'">Edit Todo</a></td>
+    <td><a th:href="${assignee.id}+'/delete-assignee'">Delete Todo</a></td>
+</tr>
+<form action="/add-assignee" method="post">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name"><br>
+    <label for="email">Email:</label>
+    <input type="text" id="email" name="email">
+    <input type="submit" value="Add">
+</form>
+</body>
+</html>

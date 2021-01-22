@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/XSL/Transform">
+<head>
+    <meta charset="UTF-8">
+    <title>Blue It</title>
+</head>
+<body>
+<div class="d-flex justify-content-center m-2">
+    <a class="btn btn-primary" href="/submit">Submit new post</a>
+</div>
+<h1 class="text-center container justify-content-center bg-secondary p-4">Trending posts</h1>
+<div class="container">
+    <table class="table table-striped table-dark">
+        <thead class="thead-dark">
+        <tr>
+            <th scope="col"> Trending</th>
+            <th scope="col"> Title</th>
+            <th scope="col"> Up vote it</th>
+            <th scope="col"> Down vote it</th>
+            <link href="/webjars/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"/>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:if="${postList.empty}">
+            <td colspan="2"> No Posts Available</td>
+        </tr>
+        <tr th:each="post : ${postList}">
+            <td scope="row"><span th:text="${post.upvote}"></span></td>
+            <td scope="row"><a th:href="'/post/' + ${post.id}" th:text="${post.title}"></a></td>
+            <td scope="row"><a th:href="'/upvote/' + ${post.id}">+</a></td>
+            <td scope="row"><a th:href="'/downvote/' + ${post.id}">-</a></td>
+        </tbody>
+    </table>
+</div>
+<nav aria-label="Page navigation example">
+    <ul class="pagination justify-content-center">
+        <li class="page-item" th:each="page : ${pageList}"><a class="page-link"
+        ><a th:href="'/index/' + ${page}"
+            th:text="${page}"></a>
+        </li>
+    </ul>
+</nav>
+<script src="/webjars/jquery/3.3.1/jquery.min.js"></script>
+<script src="/webjars/bootstrap/4.3.1/js/bootstrap.bundle.js"></script>
+</body>
+</html>
